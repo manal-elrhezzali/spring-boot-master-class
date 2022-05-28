@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomerController {
 
-  private final CustomerService customerService;
+  private  CustomerService customerService;
 
-  @Autowired
-  public CustomerController(
-      CustomerService customerService) {
-    this.customerService = customerService;
+//  @Autowired
+  public CustomerController() {
+//    this.customerService = customerService;
+    customerService = new CustomerService();
   }
 
   @GetMapping
   Customer getCustomer() {
-    return new Customer(1L, "Manal Rzzl");
+    return customerService.getCustomer();
   }
 }
