@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomerController {
 
-  private  CustomerService customerService;
+  private final CustomerService customerService;
 
-//  @Autowired
-  public CustomerController() {
+  @Autowired
+  public CustomerController(
+      CustomerService customerService) {
 //    this.customerService = customerService;
-    customerService = new CustomerService();
+    this.customerService = customerService;
   }
 
   @GetMapping
