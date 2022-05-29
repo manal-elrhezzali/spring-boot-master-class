@@ -1,5 +1,6 @@
 package com.example.springBootMasterClass.customer;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,12 +13,11 @@ public class CustomerController {
   @Autowired
   public CustomerController(
       CustomerService customerService) {
-//    this.customerService = customerService;
     this.customerService = customerService;
   }
 
   @GetMapping
-  Customer getCustomer() {
-    return customerService.getCustomer();
+  List<Customer> getCustomer() {
+    return customerService.getCustomers();
   }
 }
