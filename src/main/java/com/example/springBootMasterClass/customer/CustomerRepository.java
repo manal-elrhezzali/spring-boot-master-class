@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Primary
+//@Primary
 public class CustomerRepository implements CustomerRepo{
 
   @Override

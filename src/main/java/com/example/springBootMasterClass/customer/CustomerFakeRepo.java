@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-@Repository(value = "fake")
+//@Repository(value = "fake")
 public class CustomerFakeRepo implements CustomerRepo{
 
   @Override
