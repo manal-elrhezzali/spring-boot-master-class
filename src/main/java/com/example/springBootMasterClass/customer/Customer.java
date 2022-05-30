@@ -2,7 +2,9 @@ package com.example.springBootMasterClass.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class Customer {
   private final Long id;
@@ -12,10 +14,15 @@ public class Customer {
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private final String password;
 
-  public Customer(Long id, String name, String password) {
+  @NotBlank
+  @Email
+  private final String email;
+
+  Customer(Long id, String name, String password, String email) {
     this.id = id;
     this.name = name;
     this.password = password;
+    this.email = email;
   }
 
   @JsonProperty("customerId")
@@ -32,12 +39,17 @@ public class Customer {
     return password;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
   @Override
   public String toString() {
     return "Customer{" +
         "id=" + id +
         ", name='" + name + '\'' +
         ", password='" + password + '\'' +
+        ", email='" + email + '\'' +
         '}';
   }
 }
