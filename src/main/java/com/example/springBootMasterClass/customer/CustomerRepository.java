@@ -16,8 +16,8 @@ public class CustomerRepository implements CustomerRepo{
     //TODO: connect to a real DB
 //    return Collections.emptyList();
     return Arrays.asList(
-        new Customer(1L, "aya Rzzl"),
-        new Customer(2L, "mohammed Rzzl")
+        new Customer(1L, "aya Rzzl", "456password"),
+        new Customer(2L, "mohammed Rzzl","password456")
     );
   }
 }
