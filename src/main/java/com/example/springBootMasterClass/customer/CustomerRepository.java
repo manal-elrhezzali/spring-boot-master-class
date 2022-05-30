@@ -13,10 +13,10 @@ public class CustomerRepository implements CustomerRepo{
   @Override
   public List<Customer> getCustomers() {
     //TODO: connect to a real DB
-    return Collections.emptyList();
-//    return Arrays.asList(
-//        new Customer(1L, "aya Rzzl"),
-//        new Customer(2L, "mohammed Rzzl")
-//    );
+//    return Collections.emptyList();
+    return Arrays.asList(
+        new Customer(1L, "aya Rzzl"),
+        new Customer(2L, "mohammed Rzzl")
+    );
   }
 }

@@ -13,7 +13,7 @@ public class CustomerService {
   @Autowired
   public CustomerService(
       //specifies that we want to inject the implementation CustomerFakeRepo
-      @Qualifier("fake") CustomerRepo customerRepo) {
+       CustomerRepo customerRepo) {
     this.customerRepo = customerRepo;
   }
 
