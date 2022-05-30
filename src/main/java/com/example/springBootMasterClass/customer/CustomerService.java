@@ -24,7 +24,6 @@ public class CustomerService {
   }
 
   Customer getCustomer(Long id) {
-    //should be in the service class
     return getCustomers()
         .stream()
         .filter(customer -> customer.getId().equals(id)).findFirst()
