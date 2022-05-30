@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 public class CustomerService {
@@ -20,5 +21,13 @@ public class CustomerService {
 
   List<Customer> getCustomers() {
     return customerRepo.getCustomers();
+  }
+
+  Customer getCustomer(Long id) {
+    //should be in the service class
+    return getCustomers()
+        .stream()
+        .filter(customer -> customer.getId().equals(id)).findFirst()
+        .orElseThrow(() -> new IllegalArgumentException("customer not found"));
   }
 }

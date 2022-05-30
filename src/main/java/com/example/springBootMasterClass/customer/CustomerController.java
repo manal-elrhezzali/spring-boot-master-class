@@ -25,7 +25,7 @@ public class CustomerController {
   }
 
   @GetMapping(value = "all")
-  List<Customer> getCustomer() {
+  List<Customer> getCustomers() {
     return customerService.getCustomers();
   }
 
