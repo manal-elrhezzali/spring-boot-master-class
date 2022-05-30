@@ -5,8 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 @Primary
 public class CustomerRepository implements CustomerRepo{
 
