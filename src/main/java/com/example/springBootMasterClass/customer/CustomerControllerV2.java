@@ -1,5 +1,6 @@
 package com.example.springBootMasterClass.customer;
 
+import com.example.springBootMasterClass.exception.ApiRequestException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -34,6 +35,13 @@ public class CustomerControllerV2 {
   @GetMapping(path = "{customerId}")
   Customer getCustomer(@PathVariable("customerId") Long id) {
     return customerService.getCustomer(id);
+  }
+
+  @GetMapping(path = "{customerId}/exception")
+  Customer getCustomerException(@PathVariable("customerId") Long id) {
+    throw new ApiRequestException(
+        "ApiRequestException for customer " + id
+    );
   }
 
   @PostMapping
