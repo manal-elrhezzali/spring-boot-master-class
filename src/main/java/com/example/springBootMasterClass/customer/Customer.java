@@ -8,13 +8,15 @@ import javax.validation.constraints.Size;
 
 public class Customer {
   private final Long id;
-  @NotBlank
+
+  @NotBlank(message = "name must not be empty")
   private final String name;
-  @NotBlank
+  @NotBlank(message = "password must not be empty")
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private final String password;
 
-  @NotBlank
+  //not needed
+  @NotBlank(message = "email must not be empty")
   @Email
   private final String email;
 
