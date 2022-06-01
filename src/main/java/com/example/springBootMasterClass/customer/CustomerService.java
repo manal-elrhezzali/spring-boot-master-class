@@ -1,5 +1,6 @@
 package com.example.springBootMasterClass.customer;
 
+import com.example.springBootMasterClass.exception.NotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,6 +28,6 @@ public class CustomerService {
     return getCustomers()
         .stream()
         .filter(customer -> customer.getId().equals(id)).findFirst()
-        .orElseThrow(() -> new IllegalArgumentException("customer with id "+ id + " not found"));
+        .orElseThrow(() -> new NotFoundException("customer with id "+ id + " not found"));
   }
 }
