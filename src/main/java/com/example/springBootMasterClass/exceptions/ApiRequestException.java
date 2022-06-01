@@ -1,4 +1,4 @@
-package com.example.springBootMasterClass.exception;
+package com.example.springBootMasterClass.exceptions;
 
 //this is what we're going to throw from our code
 public class ApiRequestException extends RuntimeException{

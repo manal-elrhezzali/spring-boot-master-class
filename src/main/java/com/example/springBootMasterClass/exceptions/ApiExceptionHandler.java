@@ -1,4 +1,4 @@
-package com.example.springBootMasterClass.exception;
+package com.example.springBootMasterClass.exceptions;
 
 import java.time.ZonedDateTime;
 import org.springframework.http.HttpStatus;
@@ -32,4 +32,21 @@ public class ApiExceptionHandler {
         apiException,
         HttpStatus.BAD_REQUEST);
   }
+
+  @ExceptionHandler(value = NotFoundException.class)
+  public ResponseEntity<Object> handleApiRequestException(
+      //this is what the client for this method passes
+      NotFoundException e
+  ) {
+    ApiException apiException = new ApiException(
+        e.getMessage(),
+        e,
+        HttpStatus.NOT_FOUND,
+        ZonedDateTime.now()
+    );
+    return new ResponseEntity<>(
+        apiException,
+        HttpStatus.NOT_FOUND);
+  }
+
 }

@@ -1,4 +1,4 @@
-package com.example.springBootMasterClass.exception;
+package com.example.springBootMasterClass.exceptions;
 
 import java.time.ZonedDateTime;
 import org.springframework.http.HttpStatus;

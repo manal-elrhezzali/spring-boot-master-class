@@ -1,8 +1,6 @@
 package com.example.springBootMasterClass.customer;
 
-import com.example.springBootMasterClass.exception.ApiRequestException;
-import java.util.Arrays;
-import java.util.Collections;
+import com.example.springBootMasterClass.exceptions.ApiRequestException;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
