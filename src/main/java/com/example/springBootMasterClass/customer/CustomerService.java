@@ -8,23 +8,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService {
 
-  private final CustomerRepo customerRepo;
+  //  private final CustomerRepo customerRepo;
+  private final CustomerRepository customerRepository;
 
   @Autowired
   public CustomerService(
       //specifies that we want to inject the implementation CustomerFakeRepo
-       CustomerRepo customerRepo) {
-    this.customerRepo = customerRepo;
+      CustomerRepository customerRepository) {
+    this.customerRepository = customerRepository;
   }
 
   List<Customer> getCustomers() {
-    return customerRepo.getCustomers();
+    return customerRepository.findAll();
   }
 
   Customer getCustomer(Long id) {
-    return getCustomers()
-        .stream()
-        .filter(customer -> customer.getId().equals(id)).findFirst()
-        .orElseThrow(() -> new NotFoundException("customer with id "+ id + " not found"));
+    return customerRepository.findById(id)
+        .orElseThrow(() -> new NotFoundException("customer with id " + id + " not found"));
   }
 }
