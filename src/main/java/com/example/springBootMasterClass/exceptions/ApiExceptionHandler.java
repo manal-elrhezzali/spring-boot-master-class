@@ -1,6 +1,8 @@
 package com.example.springBootMasterClass.exceptions;
 
 import java.time.ZonedDateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 //this class is where we handle exceptions
 public class ApiExceptionHandler {
+
+  private final static Logger LOGGER = LoggerFactory.getLogger(ApiExceptionHandler.class);
 
   // we can pass multiple exceptions like value = {....}
   // we passed ApiRequestException which means
