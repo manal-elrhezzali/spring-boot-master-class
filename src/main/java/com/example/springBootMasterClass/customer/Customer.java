@@ -8,9 +8,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Customer {
 
   @Id
@@ -27,15 +35,15 @@ public class Customer {
   @Email
   private String email;
 
-  public Customer() {
-  }
+//  public Customer() {
+//  }
 
-  Customer(Long id, String name, String password, String email) {
-    this.id = id;
-    this.name = name;
-    this.password = password;
-    this.email = email;
-  }
+//  Customer(Long id, String name, String password, String email) {
+//    this.id = id;
+//    this.name = name;
+//    this.password = password;
+//    this.email = email;
+//  }
 
 //  public Customer() {
 //
@@ -59,13 +67,13 @@ public class Customer {
     return email;
   }
 
-  @Override
-  public String toString() {
-    return "Customer{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", password='" + password + '\'' +
-        ", email='" + email + '\'' +
-        '}';
-  }
+//  @Override
+//  public String toString() {
+//    return "Customer{" +
+//        "id=" + id +
+//        ", name='" + name + '\'' +
+//        ", password='" + password + '\'' +
+//        ", email='" + email + '\'' +
+//        '}';
+//  }
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 //this class is where we handle exceptions
 public class ApiExceptionHandler {
 
-  private final static Logger LOGGER = LoggerFactory.getLogger(ApiExceptionHandler.class);
+//  private final static Logger LOGGER = LoggerFactory.getLogger(ApiExceptionHandler.class);
 
   // we can pass multiple exceptions like value = {....}
   // we passed ApiRequestException which means

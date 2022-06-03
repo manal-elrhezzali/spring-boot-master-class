@@ -3,6 +3,7 @@ package com.example.springBootMasterClass.customer;
 import com.example.springBootMasterClass.exceptions.ApiRequestException;
 import java.util.List;
 import javax.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping(path = "api/v2/customers")
 @RestController
+@AllArgsConstructor
 public class CustomerControllerV2 {
 
   private final CustomerService customerService;
 
-  @Autowired
-  public CustomerControllerV2(
-      CustomerService customerService) {
-    this.customerService = customerService;
-  }
+//  @Autowired
+//  public CustomerControllerV2(
+//      CustomerService customerService) {
+//    this.customerService = customerService;
+//  }
 
   @GetMapping
   List<Customer> getCustomers() {
